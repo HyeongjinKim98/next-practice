@@ -1,5 +1,6 @@
 'use server'
 import type { Book } from "@/types/book"
+import { revalidatePath } from "next/cache"
 type CartItem = Pick<Book, 'id' | 'title' | 'price' | 'coverImage'> & {quantity : number}
 
 export const addToCart = async(book : Book)=>{
