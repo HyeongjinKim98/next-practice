@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "slug": "clean-code",
       "title": "클린 코드",
       "author": "로버트 C. 마틴",
@@ -15,10 +15,14 @@
       "coverImage": "https://picsum.photos/seed/cleancode/400/600",
       "isNew": false,
       "rating": 4.8,
-      "tags": ["프로그래밍", "베스트셀러", "클린코드"]
+      "tags": [
+        "프로그래밍",
+        "베스트셀러",
+        "클린코드"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "slug": "refactoring",
       "title": "리팩터링 2판",
       "author": "마틴 파울러",
@@ -32,10 +36,13 @@
       "coverImage": "https://picsum.photos/seed/refactoring/400/600",
       "isNew": true,
       "rating": 4.7,
-      "tags": ["프로그래밍", "리팩터링"]
+      "tags": [
+        "프로그래밍",
+        "리팩터링"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "slug": "javascript-deep-dive",
       "title": "모던 자바스크립트 Deep Dive",
       "author": "이웅모",
@@ -49,10 +56,13 @@
       "coverImage": "https://picsum.photos/seed/jsdeepdive/400/600",
       "isNew": true,
       "rating": 4.9,
-      "tags": ["자바스크립트", "프론트엔드"]
+      "tags": [
+        "자바스크립트",
+        "프론트엔드"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "slug": "database-design",
       "title": "실전 데이터베이스 설계",
       "author": "홍길동",
@@ -66,10 +76,13 @@
       "coverImage": "https://picsum.photos/seed/dbdesign/400/600",
       "isNew": false,
       "rating": 4.3,
-      "tags": ["데이터베이스", "백엔드"]
+      "tags": [
+        "데이터베이스",
+        "백엔드"
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "slug": "frontend-architecture",
       "title": "프론트엔드 아키텍처 가이드",
       "author": "김프론트",
@@ -83,8 +96,54 @@
       "coverImage": "https://picsum.photos/seed/frontendarch/400/600",
       "isNew": true,
       "rating": 4.5,
-      "tags": ["프론트엔드", "아키텍처"]
+      "tags": [
+        "프론트엔드",
+        "아키텍처"
+      ]
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "3",
+      "slug": "javascript-deep-dive",
+      "title": "모던 자바스크립트 Deep Dive",
+      "author": "이웅모",
+      "category": "programming",
+      "description": "자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.",
+      "descriptionHtml": "<p>자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.</p>",
+      "price": {
+        "amount": "42000",
+        "currencyCode": "KRW"
+      },
+      "coverImage": "https://picsum.photos/seed/jsdeepdive/400/600",
+      "isNew": true,
+      "rating": 4.9,
+      "tags": [
+        "자바스크립트",
+        "프론트엔드"
+      ],
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "slug": "javascript-deep-dive",
+      "title": "모던 자바스크립트 Deep Dive",
+      "author": "이웅모",
+      "category": "programming",
+      "description": "자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.",
+      "descriptionHtml": "<p>자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.</p>",
+      "price": {
+        "amount": "42000",
+        "currencyCode": "KRW"
+      },
+      "coverImage": "https://picsum.photos/seed/jsdeepdive/400/600",
+      "isNew": true,
+      "rating": 4.9,
+      "tags": [
+        "자바스크립트",
+        "프론트엔드"
+      ],
+      "quantity": 1
+    }
+  ]
 }

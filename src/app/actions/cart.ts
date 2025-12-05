@@ -19,4 +19,4 @@ const addToCart = async(book : Book)=>{
         return {status : false , message : "장바구니 추가에 실패했습니다."}
     }
 }
-export deafult addToCart;
+export default addToCart;
