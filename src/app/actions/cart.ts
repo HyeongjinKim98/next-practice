@@ -1,6 +1,6 @@
 'use server'
 import type { Book } from "@/types/book"
-import { revalidatePath } from "next/cache"
+import { revalidateTag } from "next/cache"
 type CartItem = Pick<Book, 'id' | 'title' | 'price' | 'coverImage'> & {quantity : number}
 
 export const addToCart = async(book : Book)=>{
@@ -35,6 +35,8 @@ export const updateQuantity = async(bookId : number, quantity : number)=>{
             headers : {'Content-Type' : 'application/json'},
             body : JSON.stringify({quantity})
         });
+
+        revalidateTag('cart')
         return {status : true , message : "수량이 변경 되었습니다"}
     }catch{
         return {status : false , message : "수량 변경에 실패했습니다"}
