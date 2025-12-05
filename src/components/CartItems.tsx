@@ -4,18 +4,14 @@ import type { CartItem } from "@/types/book";
 import { updateQuantity,removeCartItem } from "@/app/actions/cart";
 const CartItems =({cart} :{cart : CartItem[]})=>{
 
-    const handleRemove =(id : number)=>{
+    const handleRemove =(id : number )=>{
         if(confirm("해당 상품을 삭제하시겠습니까?")){
             removeCartItem(id)
         }
     }
     return(
         <>
-            <div className="flex flex-col gap-6 p-8 ">
-                <h1 className="text-3xl font-bold">
-                장바구니
-                </h1>
-                <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
                     {cart.map((item)=>(
                         <div key={item.id} className="flex gap-4 border rounded p-4 relative">
                             <button
@@ -49,8 +45,6 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                         </div>
                     ))}
                 </div>
-                
-            </div>
         </>
     )
 }
