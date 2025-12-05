@@ -9,6 +9,11 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
             removeCartItem(id)
         }
     }
+
+    const totalAmount = cart.reduce((sum, item)=>{
+        return sum + (Number(item.price.amount) * item.quantity);
+    },0)
+
     return(
         <>
             <div className="flex flex-col gap-4">
@@ -44,6 +49,10 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-end items-center gap-1 border-t pt-4 mt-2">
+                    <p className="text-2xl font-bold text-gray-900">{totalAmount}</p>
+                    <p className="text-xl font-bold text-gray-500">원</p>
                 </div>
         </>
     )
