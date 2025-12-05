@@ -19,9 +19,15 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                             <div className="flex flex-col gap-1 w-full">
                                 <p className="font-semibold">{item.title}</p>
                                 <p className="">{item.price.amount} {item.price.currencyCode}</p>
-                                <p className="">{item.quantity}개</p>
                                 <hr className="mt-auto"/>
-                                <p className="text-right">{Number(item.price.amount) * item.quantity} {item.price.currencyCode}</p>
+                                <div className="flex place-content-between">
+                                    <div className="flex gap-3">
+                                        <button className="bg-gray-500 rounded text-white w-6 h-6 items-center">-</button>
+                                        <p className="">{item.quantity}개</p>
+                                        <button className="bg-gray-500 rounded text-white w-6 h-6 items-center">+</button>
+                                    </div>
+                                    <p className="text-right">{Number(item.price.amount) * item.quantity} {item.price.currencyCode}</p>
+                                </div>
                             </div>
                         </div>
                     ))}
