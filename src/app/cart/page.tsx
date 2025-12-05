@@ -1,13 +1,10 @@
-'use client'
-import type { CartItem } from "@/types/book";
-import { useState,useEffect } from "react";
 import CartItems from "@/components/CartItems";
-const CartPage =()=>{
-    const [cart, setCart] = useState<CartItem[]>([]);
-    useEffect(()=>{
-        const storage = JSON.parse(localStorage.getItem("cart")||"[]");
-        setCart(storage);
-    },[])
+import type { CartItem } from "@/types/book";
+const CartPage =async()=>{
+    const response = await fetch("http://localhost:4000/cart",{
+        next: { revalidate: 10 },
+    });
+    const cart : CartItem[] = await response.json();
     return(
         <>
             <CartItems cart={cart}/>
