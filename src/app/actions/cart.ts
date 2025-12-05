@@ -40,4 +40,3 @@ export const updateQuantity = async(bookId : number, quantity : number)=>{
     }
 
 }
-export default addToCart;

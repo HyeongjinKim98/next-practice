@@ -1,6 +1,6 @@
 "use client"
 import type { Book } from "@/types/book"
-import addToCart from "@/app/actions/cart"
+import {addToCart} from "@/app/actions/cart"
 
 const CartButton =({book} : {book : Book})=>{
 
