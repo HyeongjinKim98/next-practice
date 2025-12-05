@@ -1,5 +1,7 @@
+'use client'
 import Image from "next/image";
 import type { CartItem } from "@/types/book";
+import { updateQuantity } from "@/app/actions/cart";
 const CartItems =({cart} :{cart : CartItem[]})=>{
     return(
         <>
@@ -22,9 +24,13 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                                 <hr className="mt-auto"/>
                                 <div className="flex place-content-between">
                                     <div className="flex gap-3">
-                                        <button className="bg-gray-500 rounded text-white w-6 h-6 items-center">-</button>
+                                        <button
+                                            onClick={()=>updateQuantity(item.id,item.quantity-1)}
+                                        className="bg-gray-500 rounded text-white w-6 h-6 items-center">-</button>
                                         <p className="">{item.quantity}개</p>
-                                        <button className="bg-gray-500 rounded text-white w-6 h-6 items-center">+</button>
+                                        <button
+                                            onClick={()=>updateQuantity(item.id,item.quantity+1)}
+                                            className="bg-gray-500 rounded text-white w-6 h-6 items-center">+</button>
                                     </div>
                                     <p className="text-right">{Number(item.price.amount) * item.quantity} {item.price.currencyCode}</p>
                                 </div>

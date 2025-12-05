@@ -122,28 +122,7 @@
         "자바스크립트",
         "프론트엔드"
       ],
-      "quantity": 2
-    },
-    {
-      "id": "3",
-      "slug": "javascript-deep-dive",
-      "title": "모던 자바스크립트 Deep Dive",
-      "author": "이웅모",
-      "category": "programming",
-      "description": "자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.",
-      "descriptionHtml": "<p>자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.</p>",
-      "price": {
-        "amount": "42000",
-        "currencyCode": "KRW"
-      },
-      "coverImage": "https://picsum.photos/seed/jsdeepdive/400/600",
-      "isNew": true,
-      "rating": 4.9,
-      "tags": [
-        "자바스크립트",
-        "프론트엔드"
-      ],
-      "quantity": 1
+      "quantity": 0
     },
     {
       "id": "4",
