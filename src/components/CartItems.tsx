@@ -1,8 +1,14 @@
 'use client'
 import Image from "next/image";
 import type { CartItem } from "@/types/book";
-import { updateQuantity } from "@/app/actions/cart";
+import { updateQuantity,removeCartItem } from "@/app/actions/cart";
 const CartItems =({cart} :{cart : CartItem[]})=>{
+
+    const handleRemove =(id : number)=>{
+        if(confirm("해당 상품을 삭제하시겠습니까?")){
+            removeCartItem(id)
+        }
+    }
     return(
         <>
             <div className="flex flex-col gap-6 p-8 ">
@@ -11,7 +17,12 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                 </h1>
                 <div className="flex flex-col gap-4">
                     {cart.map((item)=>(
-                        <div key={item.id} className="flex gap-4 border rounded p-4">
+                        <div key={item.id} className="flex gap-4 border rounded p-4 relative">
+                            <button
+                                onClick={()=>handleRemove(item.id)}
+                                className="absolute top-4 right-4 rounded bg-red-500 w-6 h-6 text-white">
+                                x
+                            </button>
                             <Image
                                 src={item.coverImage}
                                 width={100}
@@ -26,7 +37,7 @@ const CartItems =({cart} :{cart : CartItem[]})=>{
                                     <div className="flex gap-3">
                                         <button
                                             onClick={()=>updateQuantity(item.id,item.quantity-1)}
-                                        className="bg-gray-500 rounded text-white w-6 h-6 items-center">-</button>
+                                            className="bg-gray-500 rounded text-white w-6 h-6 items-center">-</button>
                                         <p className="">{item.quantity}개</p>
                                         <button
                                             onClick={()=>updateQuantity(item.id,item.quantity+1)}

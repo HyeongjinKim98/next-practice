@@ -102,48 +102,5 @@
       ]
     }
   ],
-  "cart": [
-    {
-      "id": "3",
-      "slug": "javascript-deep-dive",
-      "title": "모던 자바스크립트 Deep Dive",
-      "author": "이웅모",
-      "category": "programming",
-      "description": "자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.",
-      "descriptionHtml": "<p>자바스크립트의 동작 원리를 깊이 있게 파헤치는 책입니다.</p>",
-      "price": {
-        "amount": "42000",
-        "currencyCode": "KRW"
-      },
-      "coverImage": "https://picsum.photos/seed/jsdeepdive/400/600",
-      "isNew": true,
-      "rating": 4.9,
-      "tags": [
-        "자바스크립트",
-        "프론트엔드"
-      ],
-      "quantity": 0
-    },
-    {
-      "id": "4",
-      "slug": "database-design",
-      "title": "실전 데이터베이스 설계",
-      "author": "홍길동",
-      "category": "database",
-      "description": "서비스 개발에 바로 적용할 수 있는 데이터베이스 모델링과 설계 전략을 다룹니다.",
-      "descriptionHtml": "<p>서비스 개발에 바로 적용할 수 있는 데이터베이스 모델링과 설계 전략을 다룹니다.</p>",
-      "price": {
-        "amount": "38000",
-        "currencyCode": "KRW"
-      },
-      "coverImage": "https://picsum.photos/seed/dbdesign/400/600",
-      "isNew": false,
-      "rating": 4.3,
-      "tags": [
-        "데이터베이스",
-        "백엔드"
-      ],
-      "quantity": 1
-    }
-  ]
+  "cart": []
 }

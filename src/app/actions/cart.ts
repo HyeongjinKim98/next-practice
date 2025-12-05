@@ -30,6 +30,7 @@ export const updateQuantity = async(bookId : number, quantity : number)=>{
     try{
         if(quantity < 0 ) return {status : false , message : "수량은 0개 이상 이어야 합니다"}
 
+        if(quantity === 0) await removeCartItem(bookId);
         await fetch(`http://localhost:4000/cart/${bookId}`,{
             method : 'PATCH',
             headers : {'Content-Type' : 'application/json'},
