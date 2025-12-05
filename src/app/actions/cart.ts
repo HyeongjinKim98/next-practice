@@ -43,3 +43,15 @@ export const updateQuantity = async(bookId : number, quantity : number)=>{
     }
 
 }
+
+export const removeCartItem = async(bookId : number)=>{
+    try{
+        await fetch(`http://localhost:4000/cart/${bookId}`,{
+            method : 'DELETE',
+        });
+        revalidateTag('cart')
+        return {status : true , message : "해당 품목이 제거되었습니다"}
+    }catch{
+        return {status : false , message : "제거 실패"}
+    }
+}
