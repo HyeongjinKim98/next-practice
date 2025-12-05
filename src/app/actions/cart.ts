@@ -2,7 +2,7 @@
 import type { Book } from "@/types/book"
 type CartItem = Pick<Book, 'id' | 'title' | 'price' | 'coverImage'> & {quantity : number}
 
-const addToCart = async(book : Book)=>{
+export const addToCart = async(book : Book)=>{
     try{
         const response = await fetch("http://localhost:4000/cart",{
             cache : 'no-store'
@@ -13,10 +13,10 @@ const addToCart = async(book : Book)=>{
             return await updateQuantity(existingItem.id, existingItem.quantity+1)
         }else{
             await fetch("http://localhost:4000/cart",{
-                method : 'POST',
-                headers : {'Content-Type' : 'application/json'},
-                body : JSON.stringify({...book, quantity : 1})
-            });
+            method : 'POST',
+            headers : {'Content-Type' : 'application/json'},
+            body : JSON.stringify({...book, quantity : 1})
+        });
         }
         
         return {status : true , message : "장바구니 추가에 성공했습니다."}
@@ -25,7 +25,7 @@ const addToCart = async(book : Book)=>{
     }
 }
 
-const updateQuantity = async(bookId : number, quantity : number)=>{
+export const updateQuantity = async(bookId : number, quantity : number)=>{
     try{
         if(quantity < 0 ) return {status : false , message : "수량은 0개 이상 이어야 합니다"}
 
