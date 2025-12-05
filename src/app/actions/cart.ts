@@ -8,13 +8,17 @@ const addToCart = async(book : Book)=>{
             cache : 'no-store'
         });
         const cart: CartItem[] = await response.json();
-        const idx = cart.findIndex(e => e.id === book.id)
-
-        await fetch("http://localhost:4000/cart",{
-            method : 'POST',
-            headers : {'Content-Type' : 'application/json'},
-            body : JSON.stringify({...book, quantity : 1})
-        });
+        const existingItem = cart.find(e => e.id === book.id)
+        if(existingItem){
+            return await updateQuantity(existingItem.id, existingItem.quantity+1)
+        }else{
+            await fetch("http://localhost:4000/cart",{
+                method : 'POST',
+                headers : {'Content-Type' : 'application/json'},
+                body : JSON.stringify({...book, quantity : 1})
+            });
+        }
+        
         return {status : true , message : "장바구니 추가에 성공했습니다."}
     }catch{
         return {status : false , message : "장바구니 추가에 실패했습니다."}
