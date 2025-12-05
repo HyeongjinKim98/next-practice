@@ -15,8 +15,25 @@ const addToCart = async(book : Book)=>{
             headers : {'Content-Type' : 'application/json'},
             body : JSON.stringify({...book, quantity : 1})
         });
+        return {status : true , message : "장바구니 추가에 성공했습니다."}
     }catch{
         return {status : false , message : "장바구니 추가에 실패했습니다."}
     }
+}
+
+const updateQuantity = async(bookId : number, quantity : number)=>{
+    try{
+        if(quantity < 0 ) return {status : false , message : "수량은 0개 이상 이어야 합니다"}
+
+        await fetch(`http://localhost:4000/cart/${bookId}`,{
+            method : 'PATCH',
+            headers : {'Content-Type' : 'application/json'},
+            body : JSON.stringify({quantity})
+        });
+        return {status : true , message : "수량이 변경 되었습니다"}
+    }catch{
+        return {status : false , message : "수량 변경에 실패했습니다"}
+    }
+
 }
 export default addToCart;
